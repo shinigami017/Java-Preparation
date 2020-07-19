@@ -127,7 +127,7 @@ class ManachersLongestPalindromeSubstring {
     }
     public static void main(final String[] args) throws Exception {
         final Scanner sc = new Scanner(System.in);
-        System.out.println("\nLongest Palindrome Substring Naive Approach\n");
+        System.out.println("\nLongest Palindrome Substring using Manacher's Algorithm\n");
         System.out.print("Enter your text : ");
         final String text = sc.nextLine();
         final String lps = getManachersLongestPalindromicSubstring(text);
