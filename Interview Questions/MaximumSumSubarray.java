@@ -26,6 +26,18 @@ class MaximumSumSubarray{
         }
         return Arrays.stream(array).max().getAsInt();
     }
+    
+    // faster than above approach for O(n)
+    public int getMaximumSumOfSubarray3(int[] array) {
+        int sum = array[0], max_sum = array[0];
+        for(int i = 1;i < array.length; i++)
+        {
+            sum += array[i];
+            sum = Math.max(sum, array[i]);
+            max_sum = Math.max(sum, max_sum);
+        }
+        return max_sum;
+    }
 
     public static void main(String args[])throws Exception {
         Scanner sc = new Scanner(System.in);
