@@ -29,11 +29,9 @@ class MaximumSumSubarray{
     
     // faster than above approach for O(n)
     public int getMaximumSumOfSubarray3(int[] array) {
-        int sum = array[0], max_sum = array[0];
-        for(int i = 1;i < array.length; i++)
-        {
-            sum += array[i];
-            sum = Math.max(sum, array[i]);
+        int max_sum = Integer.MIN_VALUE, sum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            sum = (sum < 0) ? nums[i] : sum + nums[i];
             max_sum = Math.max(sum, max_sum);
         }
         return max_sum;
